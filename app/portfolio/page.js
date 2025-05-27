@@ -1,23 +1,38 @@
+import Image from 'next/image';
+
 export default function Portfolio() {
   const projects = [
-    { title: 'Project 1', description: 'A web app for clients.', image: '/images/project1.jpg' },
-    { title: 'Project 2', description: 'E-commerce platform.', image: '/images/project2.jpg' },
-    { title: 'Project 3', description: 'Portfolio redesign.', image: '/images/project3.jpg' },
+    { category: "Technology", title: "Project Sky Drone for Security", image: "/p1.jpg" },
+    { category: "Kids Life", title: "Block Ideas for Child Skills Development", image: "/p2.jpg" },
+    { category: "Business", title: "CRM Integration System", image: "/p3.jpg" },
+    { category: "Innovation", title: "Smart Home Automation", image: "/p4.jpg" },
   ];
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center mb-8 shadow-md">Our Portfolio</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, index) => (
-          <div key={index} className="bg-gray-800 bg-opacity-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-            <img src={project.image} alt={project.title} className="w-full h-32 object-cover mb-4 rounded" />
-            <h2 className="text-xl font-bold text-center">{project.title}</h2>
-            <p className="text-center">{project.description}</p>
-            <button className="mt-4 mx-auto block bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition duration-300">View Project</button>
-          </div>
-        ))}
+    <section className="bg-gradient-to-b from-black to-gray-800 py-16">
+      <div className="container mx-auto px-4">
+        <h3 className="text-[#00C4B4] text-xl text-center mb-2">Our Latest Projects</h3>
+        <h2 className="text-white text-3xl font-bold text-center mb-8 relative">
+          Latest Projects
+          <span className="block w-16 h-1 bg-[#00C4B4] mx-auto mt-2"></span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <div key={index} className="relative">
+              <Image src={project.image} alt={project.title} width={500} height={300} className="rounded-lg" />
+              <div className="absolute bottom-4 left-4 text-white">
+                <p className="text-[#00C4B4] uppercase">{project.category}</p>
+                <h3 className="text-xl font-semibold">{project.title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-right mt-8">
+          <a href="#" className="bg-gradient-to-r from-[#00C4B4] to-[#007BFF] text-white px-6 py-2 rounded-full">
+            All Portfolios
+          </a>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

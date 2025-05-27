@@ -1,23 +1,34 @@
 export default function Services() {
   const services = [
-    { title: 'Web Development', description: 'Build modern websites.', icon: '/images/web.svg' },
-    { title: 'Digital Marketing', description: 'Grow your online presence.', icon: '/images/marketing.svg' },
-    { title: 'Consulting', description: 'Expert business advice.', icon: '/images/consulting.svg' },
+    { title: "Digital Marketing", items: ["SEO & PPC", "Social Media Marketing", "Content Marketing", "Email Marketing"] },
+    { title: "Software Development", items: ["Web Application Development", "Mobile App Development", "E-commerce Solutions", "Custom Software Development"] },
+    { title: "Technology Consulting", items: ["Strategic IT Planning", "Systems Integration", "Cloud Services", "Digital Transformation"] },
+    { title: "Business Strategy", items: ["Market Research", "Strategic Planning", "Business Model Innovation", "Risk Management"] },
+    { title: "Quality Assurance", items: ["Comprehensive Testing", "QA Automation", "Performance Testing", "Security Testing"] },
+    { title: "Innovation Services", items: ["Product Innovation", "Process Innovation", "Technology Innovation", "Culture of Innovation"] },
   ];
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center mb-8 shadow-md">Our Services</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((service, index) => (
-          <div key={index} className="bg-gray-800 bg-opacity-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-            <img src={service.icon} alt={service.title} className="w-12 h-12 mb-4 mx-auto" />
-            <h2 className="text-xl font-bold text-center">{service.title}</h2>
-            <p className="text-center">{service.description}</p>
-            <button className="mt-4 mx-auto block bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition duration-300">Learn More</button>
-          </div>
-        ))}
+    <section className="bg-[#1A1A2E] py-16">
+      <div className="container mx-auto px-4">
+        <h2 className="text-white text-3xl font-bold text-center mb-8">Our Services</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {services.map((service, index) => (
+            <div key={index} className="p-6">
+              <h3 className="text-white text-xl font-semibold mb-4">{service.title}</h3>
+              <ul className="text-[#B0B0B0] list-disc pl-5 mb-4">
+                {service.items.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+              <a href="#" className="text-[#00D4FF] underline">Read More</a>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <a href="#about" className="text-[#00D4FF] text-3xl">↓</a>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

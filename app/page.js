@@ -1,11 +1,12 @@
 export default function Home() {
   return (
-    <div className="container mx-auto p-4 text-center">
-      <h1 className="text-4xl font-bold mb-4">Welcome to Our Company</h1>
-      <p className="text-lg mb-6">We provide top-notch services to help your business grow.</p>
-      <a href="/services" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-        Our Services
-      </a>
+    <div className="min-h-screen bg-gradient-to-b from-[#000000] to-[#1A2A44] flex items-center justify-center text-center">
+      <div className="pt-20">
+        <h2 className="text-[#00C4B4] text-xl uppercase mb-4">Where Tech Meets Transformation</h2>
+        <h1 className="text-white text-5xl font-bold leading-tight">
+          Join Us in Shaping the Future
+        </h1>
+      </div>
     </div>
   );
 }
